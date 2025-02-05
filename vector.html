@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Vector | Presidency University</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/flick" rel="stylesheet">
+                
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/flick');
+        body {
+            transition: background-color 0.5s, color 0.5s;
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Flick';
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+        }
+        .dark-mode {
+            background-color: #ffffff;
+            color: #121212;
+        }
+        .hero {
+            background: url('HERO SECTION.jpg') center/cover no-repeat;
+            color: #ffffff;
+            text-align: left;
+            padding: 100px 20px;
+            font-family: 'Flick';
+            font-weight: bold;
+            font-size: 1.5rem;
+            letter-spacing: 3px;
+            transition: background-color 0.5s, color 0.5s;
+        }
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-2px); }
+            50% { transform: translateX(2px); }
+            75% { transform: translateX(-2px); }
+            100% { transform: translateX(0); }
+        }
+
+        .hero h1:hover, .hero p:hover {
+            animation: shake 0.5s ease-in-out;
+            animation-iteration-count: 1;
+        }
+
+        .dark-mode .hero {
+            color: #fff8f8;
+        }
+        .navbar {
+            background-color: #000000;
+            transition: background-color 0.5s;
+            font-family: 'Flick';
+        }
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #00b3ff !important;
+        }
+        .theme-icon {
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        .carousel-item img {
+            max-height: 500px;
+            object-fit: cover;
+            animation: fadeIn 1.5s;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #0095ff;
+            text-transform: uppercase;
+            animation: slideIn 1s;
+            font-weight: bold;
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+        .card {
+            background-color: #1e1e1e;
+            color: #ffffff;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        .about-card {
+            padding: 20px;
+            background: #1e1e1e;
+            border-radius: 8px;
+            color: #ffffff;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .about-card:hover {
+            transform: scale(1.05) rotate(1deg);
+            box-shadow: 0 8px 16px rgba(0, 251, 255, 0.3);
+        }
+        .team-card {
+            background-color: #1e1e1e;
+            color: #ffffff;
+            transition: transform 0.3s, box-shadow 0.3s;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+            cursor: pointer;
+        }
+        .team-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 251, 255, 0.3);
+        }
+        .popup {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #2a2a2a;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 251, 255, 0.3);
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            opacity: 0;
+            width: 250px;
+            text-align: center;
+        }
+        .team-card:hover .popup {
+            display: block;
+            opacity: 1;
+            transform: translateX(-50%) translateY(10px);
+        }
+        .popup img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .gallery-title {
+            color: #ffffff !important;
+        }
+        .dark-mode .gallery-title {
+            color: #ffffff !important;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="start.html">
+                <img src="vector logo.png" alt="Team Vector Logo" style="height: 150px; width:200px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#specifications">Specifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="signin.html">Sign In / Register</a></li>
+
+                    
+                    <li class="nav-item"><span class="theme-icon" onclick="toggleTheme()">🌙</span></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Team Vector</h1>
+            <p>Pushing the Limits of Innovation and Speed</p>
+        </div>
+    </header>
+
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-card">
+                <p>Team Vector, the motorsports club of Presidency University, is dedicated to designing and engineering cutting-edge vehicles that redefine speed, performance, and innovation. With a focus on sustainability and precision, we aim to excel in national and international motorsports events.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-5 bg-dark">
+        <div class="container">
+            <h2 class="section-title">Gallery</h2>
+            <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://via.placeholder.com/800x400" class="d-block w-100" alt="Team Vector in action">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://via.placeholder.com/800x400/ff0000" class="d-block w-100" alt="Vehicle Design">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://via.placeholder.com/800x400/000000" class="d-block w-100" alt="Workshop">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="specifications" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Specifications</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Powertrain</h5>
+                            <p class="card-text">BLDC Motor with Chain and Sprocket Drive<br>Power: 3 kW (4.08 Hp)<br>Torque: 9.6 N-m</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Chassis</h5>
+                            <p class="card-text">Material: AISI 4130<br>Weight: 160 kg<br>Wheelbase: 1050 mm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Our Team</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="team-card">
+                        <h3>Innovation Team</h3>
+                        <p>Focused on research and development, ensuring cutting-edge technology in our vehicles.</p>
+                        <div class="popup">
+                            <img src="https://www.kevinashleyphotography.com/wp-content/uploads/2015/11/person.jpg" alt="Innovation Head">
+                            <p>John Doe</p>
+                            <p>Contact: 123-456-7890</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="team-card">
+                        <h3>Mechanical Team</h3>
+                        <p>Responsible for the design, fabrication, and performance optimization of our vehicles.</p>
+                        <div class="popup">
+                            <img src="head_mechanical.jpg" alt="Mechanical Head">
+                            <p>Jane Smith</p>
+                            <p>Contact: 987-654-3210</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="team-card">
+                        <h3>Marketing Team</h3>
+                        <p>Handles branding, sponsorships, and social media presence to promote Team Vector.</p>
+                        <div class="popup">
+                            <img src="head_marketing.jpg" alt="Marketing Head">
+                            <p>Emily Davis</p>
+                            <p>Contact: 456-789-0123</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <footer class="bg-black text-white text-center py-3">
+        <p>&copy; 2025 Team Vector, Presidency University. All rights reserved.</p>
+        <a href="https://www.instagram.com/_team_vector_?igsh=a2p6Y3k4YXZpa3Jl" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 30px; height: 30px;">
+        </a>
+        <a href="https://youtu.be/9P7UYXZ0AGE?si=zdYEDTTtXqRJyOzV" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/640px-YouTube_full-color_icon_%282017%29.svg.png" alt="Instagram" style="width: 30px; height: 30px;">
+        </a>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            const themeIcon = document.querySelector('.theme-icon');
+            themeIcon.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

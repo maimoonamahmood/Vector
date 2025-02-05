@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vector Website - Intro</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { overflow: hidden; background: black; display: flex; align-items: center; justify-content: center; height: 100vh; }
+        video { width: 100vw; height: 100vh; object-fit: cover; }
+    </style>
+</head>
+<body>
+    <video id="introVideo" autoplay muted playsinline>
+        <source src="welcome vedio.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const video = document.getElementById("introVideo");
+            video.play().catch(error => console.error("Autoplay blocked:", error));
+            
+            video.onended = function() {
+                setTimeout(() => {
+                    window.location.href = "vector.html";
+                }, 500);
+            };
+        });
+    </script>
+</body>
+</html>
